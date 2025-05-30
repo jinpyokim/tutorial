@@ -1,5 +1,16 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import '../styles/global.css';
 
+const pageTitle = "Welcome to Malleable Software LLC";
+const companyInfo = {
+  name: "Malleable Software LLC",
+  description: "A software development company focused on creating flexible and adaptable solutions.",
+  location: "USA",
+  services: ["AI Web Development", "AI Mobile Apps", "Cloud Solutions"],
+};
+const isUnderConstruction = true;
+const contactEmail = "info@malleablesoft.com";
 ---
 
 <html lang="en">
@@ -8,13 +19,26 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>malleable software LLC website</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-		<a href="/blog">Blog</a>
+		<Navigation />
+		<h1>{pageTitle}</h1>
+		<p>{companyInfo.description}</p>
+		<p>Location: {companyInfo.location}</p>
+		<p>Services offered:</p>
+		<ul>
+			{companyInfo.services.map(service => (
+				<li>{service}</li>
+			))}
+		</ul>
+		{isUnderConstruction && (
+			<p>This website is currently under construction. Please check back later!</p>
+		)}
+		<p>For inquiries, contact us at <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
+		<p>Thank you for your patience!</p>
+		<!-- Add any additional content or components here -->
+
 		
-		<h1>malleable software website (under construction)</h1>
 	</body>
 </html>
