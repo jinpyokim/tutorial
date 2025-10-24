@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Malleable Software</title>
+  <meta name="description" content="Malleable Software — Cupertino, CA. Contact: reach@malleablesoft.com" />
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      font-size: 14px; /* small font */
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    main {
+      text-align: center;
+      max-width: 720px;
+    }
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 18px; /* keep small */
+      letter-spacing: 0.04em;
+      text-transform: lowercase; /* stylistic choice; easy to change */
+    }
+    p { margin: 6px 0; opacity: 0.92; }
+    a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+    footer { margin-top: 16px; font-size: 12px; opacity: 0.6; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <main aria-labelledby="brand">
+      <h1 id="brand">malleable software</h1>
+      <p>Cupertino, CA</p>
+      <p><a href="mailto:reach@malleablesoft.com">reach@malleablesoft.com</a></p>
+      <footer>© <span id="year"></span> Malleable Software LLC</footer>
+    </main>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
